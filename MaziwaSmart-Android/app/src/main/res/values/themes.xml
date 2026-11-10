@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.MaziwaSmart" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/brand_green</item>
+    </style>
+</resources>

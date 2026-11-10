@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "290895341262",
+    "project_id": "maziwasmart-b3bbf",
+    "storage_bucket": "maziwasmart-b3bbf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290895341262:android:3e97ba89dd5db29e3f529f",
+        "android_client_info": {
+          "package_name": "com.maziwasmart.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290895341262-b8h8mqk83fa54h76gceuktf1s3qbmv3c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maziwasmart.app",
+            "certificate_hash": "c3747237dcf5c15cf2dd741637a6928e1c390bef"
+          }
+        },
+        {
+          "client_id": "290895341262-b0pioqnuj2q7oq4h1tm0klvo0sf8orkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9MB4B-5tr47XWuH_ggpjdRSW1mSyYa7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290895341262-b0pioqnuj2q7oq4h1tm0klvo0sf8orkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
