@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 import com.maziwasmart.app.ai.RidgeMilkYieldPredictor
+import com.maziwasmart.app.ai.RidgeModelCalculator
 import com.maziwasmart.app.data.Breeds
 import com.maziwasmart.app.data.Cow
 import com.maziwasmart.app.data.Dates
@@ -533,6 +534,41 @@ fun CowProfileScreen(
                         fontSize = 11.sp,
                         color = OrangeText
                     )
+                }
+
+                // Explainable AI: show how the model reached this estimate
+                var showWhy by rememberSaveable { mutableStateOf(false) }
+
+                Text(
+                    if (showWhy) "Hide explanation ▲" else "Why this estimate? ▼",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = GreenDeep,
+                    modifier = Modifier
+                        .clickable { showWhy = !showWhy }
+                        .padding(vertical = 4.dp)
+                )
+
+                if (showWhy) {
+                    val explanation = remember(prediction) {
+                        runCatching {
+                            RidgeModelCalculator(context).explain(
+                                prediction.averageDmiKg,
+                                prediction.thiRange,
+                                prediction.geneticGroup
+                            )
+                        }.getOrNull()
+                    }
+
+                    if (explanation != null) {
+                        Text(
+                            explanation.summary(),
+                            fontSize = 12.sp,
+                            color = Brown
+                        )
+
+                        ExplanationBreakdown(explanation)
+                    }
                 }
             } else {
                 Text(

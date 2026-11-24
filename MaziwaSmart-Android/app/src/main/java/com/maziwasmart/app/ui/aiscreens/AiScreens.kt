@@ -412,38 +412,12 @@ fun PredictionScreen(
                 Legend("Actual", GreenDeep)
             }
 
-            AppCard {
-
-                Text(
-                    "Inputs used by the trained model",
-                    fontSize = 11.sp,
-                    color = Muted
-                )
-
-                Row(
-                    Modifier.horizontalScroll(rememberScrollState()),
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-
-                    Pill(
-                        "DMI ${p.averageDmiKg} kg",
-                        GreenSoft,
-                        GreenDeep
-                    )
-
-                    Pill(
-                        "THI ${p.thiRange}",
-                        GreenSoft,
-                        GreenDeep
-                    )
-
-                    Pill(
-                        p.geneticGroup,
-                        GreenSoft,
-                        GreenDeep
-                    )
-                }
-            }
+            // Explainable AI: how the model reached this number
+            PredictionExplanationCard(
+                dmiKg = p.averageDmiKg,
+                thiRange = p.thiRange,
+                geneticGroup = p.geneticGroup
+            )
         }
 
         Row(
